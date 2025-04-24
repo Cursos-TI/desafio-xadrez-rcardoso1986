@@ -5,17 +5,55 @@
 // O objetivo é utilizar estruturas de repetição e funções para determinar os limites de movimentação dentro do jogo.
 
 int main() {
+
+    int option;
+    printf("Selecione a peça desejada \n");
+    printf("1 - Bispo\n");
+    printf("2 - Torre\n");
+    printf("3 - Rainha\n");
+
+    scanf("%d", &option);
+
     // Nível Novato - Movimentação das Peças
     // Sugestão: Declare variáveis constantes para representar o número de casas que cada peça pode se mover.
 
-    // Implementação de Movimentação do Bispo
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação do Bispo em diagonal.
-
-    // Implementação de Movimentação da Torre
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Torre para a direita.
-
-    // Implementação de Movimentação da Rainha
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Rainha para a esquerda.
+    if(option == 1)
+    {
+        // Implementação de Movimentação do Bispo
+        // Sugestão: Utilize uma estrutura de repetição para simular a movimentação do Bispo em diagonal.
+        int count_bishop;
+        printf("Quantas casas você deseja andar?\n");
+        scanf("%d", &count_bishop);
+        while(count_bishop > 0){
+            printf("Cima\n");
+            printf("Direita\n");
+            count_bishop--;
+        }
+    }else if(option == 2)
+    {
+        // Implementação de Movimentação da Torre
+        int count_tower;
+        printf("Quantas casas você deseja andar?\n");
+        scanf("%d", &count_tower);
+        for(int i = 0; i < count_tower; i++) {
+            printf("Frente \n");
+        }
+        // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Torre para a direita.
+    }else if(option == 3)
+    {
+        // Implementação de Movimentação da Rainha
+        // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Rainha para a esquerda.
+        int count_queen;
+        printf("Quantas casas você deseja andar?\n");
+        scanf("%d", &count_queen);
+        do{
+            printf("Esquerda \n");
+            count_queen--;
+        }
+        while(count_queen > 0);
+    }else{
+        printf("Opção inválida\n");
+    }
 
     // Nível Aventureiro - Movimentação do Cavalo
     // Sugestão: Utilize loops aninhados para simular a movimentação do Cavalo em L.
