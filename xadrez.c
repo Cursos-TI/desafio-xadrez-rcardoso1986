@@ -11,48 +11,57 @@ int main() {
     printf("1 - Bispo\n");
     printf("2 - Torre\n");
     printf("3 - Rainha\n");
+    printf("4 - Cavalo\n");
 
     scanf("%d", &option);
 
-    // Nível Novato - Movimentação das Peças
-    // Sugestão: Declare variáveis constantes para representar o número de casas que cada peça pode se mover.
-
-    if(option == 1)
+    int count_movements;
+    printf("Quantas casas você deseja andar?\n");
+    scanf("%d", &count_movements);
+    
+    switch(option)
     {
-        // Implementação de Movimentação do Bispo
-        // Sugestão: Utilize uma estrutura de repetição para simular a movimentação do Bispo em diagonal.
-        int count_bishop;
-        printf("Quantas casas você deseja andar?\n");
-        scanf("%d", &count_bishop);
-        while(count_bishop > 0){
-            printf("Cima\n");
-            printf("Direita\n");
-            count_bishop--;
-        }
-    }else if(option == 2)
-    {
-        // Implementação de Movimentação da Torre
-        int count_tower;
-        printf("Quantas casas você deseja andar?\n");
-        scanf("%d", &count_tower);
-        for(int i = 0; i < count_tower; i++) {
-            printf("Frente \n");
-        }
-        // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Torre para a direita.
-    }else if(option == 3)
-    {
-        // Implementação de Movimentação da Rainha
-        // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Rainha para a esquerda.
-        int count_queen;
-        printf("Quantas casas você deseja andar?\n");
-        scanf("%d", &count_queen);
-        do{
-            printf("Esquerda \n");
-            count_queen--;
-        }
-        while(count_queen > 0);
-    }else{
-        printf("Opção inválida\n");
+        case 1:
+            // 🏅 Nível Novato
+            // Implementação de Movimentação do Bispo
+            // Sugestão: Utilize uma estrutura de repetição para simular a movimentação do Bispo em diagonal.
+            while(count_movements > 0){
+                printf("Cima\n");
+                printf("Direita\n");
+                count_movements--;
+            }
+            break;
+        case 2:
+            // 🏅 Nível Novato
+            // Implementação de Movimentação da Torre
+            for(int i = 0; i < count_movements; i++) {
+                printf("Frente \n");
+            }
+            break;
+        case 3:
+            // 🏅 Nível Novato
+            // Implementação de Movimentação da Rainha
+            do{
+                printf("Esquerda \n");
+                count_movements--;
+            }
+            while(count_movements > 0);
+            break;
+        case 4:
+            // 🏅 Nível Aventureiro
+            // Implementação de Movimentação do cavalo
+            while(count_movements > 0)
+            {
+                for(int i=0; i<2; i++){
+                    printf("Cima\n");
+                }
+                printf("Direita\n");
+                count_movements--;
+            }
+            break;
+        default:
+            printf("Opção inválida \n");
+            break;
     }
 
     // Nível Aventureiro - Movimentação do Cavalo
