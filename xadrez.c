@@ -33,6 +33,39 @@ void moveTower(int quantity_movements)
     }
 }
 
+void moveHorse(int quantity_movements) {
+    while(quantity_movements > 0)
+    {
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if ((i == 2 && j == 1)) {
+                    printf("Cima\n");
+                    printf("Cima\n");
+                    printf("Direita\n");
+                    break;
+                } else {
+                    continue;
+                }
+            }
+        }
+
+        quantity_movements--;
+    }
+
+}
+
+void moveBishopWithLoop(int quantity_movements) {
+    printf("Bispo com loop aninhado\n");
+    for (int i = 0; i < quantity_movements; i++) {
+        for (int j = 0; j < quantity_movements; j++) {
+            if (i == j) {
+                printf("Cima\n");
+                printf("Direita\n");
+            }
+        }
+    }
+}
+
 int main() {
 
     int option;
@@ -50,10 +83,9 @@ int main() {
     
     switch(option)
     {
+        // Implementação de Movimentação do Bispo
         case 1:
             // 🏅 Nível Novato
-            // Implementação de Movimentação do Bispo
-            // Sugestão: Utilize uma estrutura de repetição para simular a movimentação do Bispo em diagonal.
             /*
             while(count_movements > 0){
                 printf("Cima\n");
@@ -61,24 +93,39 @@ int main() {
                 count_movements--;
             }
             */
+
+
+            //🏅 Nível Aventureiro
+            // moveBishop(count_movements);
+
+
             //🏅 Nível Mestre
-            moveBishop(count_movements);
+            moveBishopWithLoop(count_movements);
             break;
+        
+        // Implementação de Movimentação da Torre
         case 2:
             // 🏅 Nível Novato
-            // Implementação de Movimentação da Torre
-
             /*
             for(int i = 0; i < count_movements; i++) {
                 printf("Frente \n");
             }
             */
+
+
+            /*
+            * 🏅 Nível Aventureiro
+            *  Não há implementação - para esse nivel
+            */
+
+
             //🏅 Nível Mestre
             moveTower(count_movements);
             break;
+
+        // Implementação de Movimentação da Rainha
         case 3:
             // 🏅 Nível Novato
-            // Implementação de Movimentação da Rainha
             /*
             do{
                 printf("Esquerda \n");
@@ -86,13 +133,28 @@ int main() {
             }
             while(count_movements > 0);
             */
+
+
+            /*
+            * 🏅 Nível Aventureiro
+            *  Não há implementação - para esse nivel
+            */
+
+
             //🏅 Nível Mestre
             moveQueen(count_movements);
             break;
-        case 4:
-            // 🏅 Nível Aventureiro
-            // Implementação de Movimentação do cavalo
 
+        // Implementação de Movimentação do cavalo
+        case 4:
+            /*
+            * 🏅 Nível Novato
+            *  Não há implementação - para esse nivel
+            */
+
+
+            // 🏅 Nível Aventureiro
+            /*
             while(count_movements > 0)
             {
                 for(int i=0; i<2; i++){
@@ -101,6 +163,11 @@ int main() {
                 printf("Direita\n");
                 count_movements--;
             }
+            */
+
+            
+            //🏅 Nível Mestre 
+            moveHorse(count_movements);
             break;
         default:
             printf("Opção inválida \n");
