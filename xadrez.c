@@ -4,6 +4,35 @@
 // Este código inicial serve como base para o desenvolvimento do sistema de movimentação das peças de xadrez.
 // O objetivo é utilizar estruturas de repetição e funções para determinar os limites de movimentação dentro do jogo.
 
+
+void moveBishop(int quantity_movements)
+{
+    if(quantity_movements > 0)
+    {
+        printf("Cima\n");
+        printf("Direita\n");
+        moveBishop(quantity_movements - 1);
+    }
+}
+
+void moveQueen(int quantity_movements)
+{
+    if(quantity_movements > 0)
+    {
+        printf("Esquerda \n");
+        moveQueen(quantity_movements - 1);
+    }
+}
+
+void moveTower(int quantity_movements)
+{
+    if(quantity_movements > 0)
+    {
+        printf("Frente \n");
+        moveTower(quantity_movements - 1);
+    }
+}
+
 int main() {
 
     int option;
@@ -25,31 +54,45 @@ int main() {
             // 🏅 Nível Novato
             // Implementação de Movimentação do Bispo
             // Sugestão: Utilize uma estrutura de repetição para simular a movimentação do Bispo em diagonal.
+            /*
             while(count_movements > 0){
                 printf("Cima\n");
                 printf("Direita\n");
                 count_movements--;
             }
+            */
+            //🏅 Nível Mestre
+            moveBishop(count_movements);
             break;
         case 2:
             // 🏅 Nível Novato
             // Implementação de Movimentação da Torre
+
+            /*
             for(int i = 0; i < count_movements; i++) {
                 printf("Frente \n");
             }
+            */
+            //🏅 Nível Mestre
+            moveTower(count_movements);
             break;
         case 3:
             // 🏅 Nível Novato
             // Implementação de Movimentação da Rainha
+            /*
             do{
                 printf("Esquerda \n");
                 count_movements--;
             }
             while(count_movements > 0);
+            */
+            //🏅 Nível Mestre
+            moveQueen(count_movements);
             break;
         case 4:
             // 🏅 Nível Aventureiro
             // Implementação de Movimentação do cavalo
+
             while(count_movements > 0)
             {
                 for(int i=0; i<2; i++){
